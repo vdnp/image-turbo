@@ -1,6 +1,6 @@
 {
   "name": "@vdnp/image-turbo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Blazing-fast client-side image compression (Canvas/WebP) with a headless React hook and a minimalist dropzone. Direct-to-cloud upload ready.",
   "license": "MIT",
   "author": "Yiğit Enes Kaya (https://github.com/vdnp)",
