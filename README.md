@@ -31,7 +31,7 @@ machine — then send them straight to S3, Cloudflare R2 or Vercel Blob via pre-
 ## Installation
 
 ```bash
-npm install image-turbo
+npm install @vdnp/image-turbo
 ```
 
 React ≥ 18 is the only peer dependency.
