@@ -1,5 +1,5 @@
 {
-  "name": "image-turbo",
+  "name": "@vdnp/image-turbo",
   "version": "1.0.0",
   "description": "Blazing-fast client-side image compression (Canvas/WebP) with a headless React hook and a minimalist dropzone. Direct-to-cloud upload ready.",
   "license": "MIT",
