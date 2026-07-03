@@ -1,0 +1,80 @@
+{
+  "name": "image-turbo",
+  "version": "1.0.0",
+  "description": "Blazing-fast client-side image compression (Canvas/WebP) with a headless React hook and a minimalist dropzone. Direct-to-cloud upload ready.",
+  "license": "MIT",
+  "author": "Yiğit Enes Kaya (https://github.com/vdnp)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdnp/image-turbo.git"
+  },
+  "homepage": "https://github.com/vdnp/image-turbo#readme",
+  "bugs": {
+    "url": "https://github.com/vdnp/image-turbo/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./adapters": {
+      "types": "./dist/adapters.d.ts",
+      "import": "./dist/adapters.js",
+      "require": "./dist/adapters.cjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsup && node -e \"require('node:fs').copyFileSync('src/styles.css','dist/styles.css')\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "e2e": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@testing-library/react": "^16.2.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "jsdom": "^26.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "keywords": [
+    "image",
+    "compression",
+    "webp",
+    "upload",
+    "react",
+    "nextjs",
+    "headless",
+    "dropzone",
+    "canvas",
+    "presigned-url",
+    "s3",
+    "r2"
+  ]
+}

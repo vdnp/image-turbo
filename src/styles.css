@@ -1,0 +1,190 @@
+/*
+ * image-turbo — TurboDropzone styles
+ *
+ * Every color lives in a --it-* custom property scoped to .it-dropzone.
+ * Theme (or dark-mode) it by redefining the variables, shadcn-style:
+ *
+ *   .dark .it-dropzone {
+ *     --it-border: #3f3f46;
+ *     --it-border-active: #a1a1aa;
+ *     --it-fg: #fafafa;
+ *     --it-muted: #a1a1aa;
+ *     --it-bg-active: rgba(255, 255, 255, 0.04);
+ *     --it-accent: #fafafa;
+ *   }
+ */
+
+.it-dropzone {
+  --it-bg: transparent;
+  --it-bg-active: rgba(0, 0, 0, 0.03);
+  --it-border: #d4d4d8;
+  --it-border-active: #71717a;
+  --it-fg: #18181b;
+  --it-muted: #71717a;
+  --it-danger: #b91c1c;
+  --it-accent: #18181b;
+  --it-radius: 8px;
+
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px dashed var(--it-border);
+  border-radius: var(--it-radius);
+  background: var(--it-bg);
+  color: var(--it-fg);
+  font: 500 14px/1.45 ui-sans-serif, system-ui, -apple-system, sans-serif;
+  cursor: pointer;
+  outline: none;
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.it-dropzone:focus-visible {
+  border-color: var(--it-border-active);
+  box-shadow: 0 0 0 3px rgba(24, 24, 27, 0.1);
+}
+
+.it-dropzone[data-drag-active] {
+  border-style: solid;
+  border-color: var(--it-border-active);
+  background: var(--it-bg-active);
+}
+
+/* while a preview fills the zone, drop the inner padding and the dashed look */
+.it-dropzone[data-status="compressing"],
+.it-dropzone[data-status="uploading"],
+.it-dropzone[data-status="success"] {
+  padding: 0;
+  border-style: solid;
+}
+
+.it-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.it-icon {
+  color: var(--it-muted);
+  margin-bottom: 2px;
+}
+
+.it-label {
+  margin: 0;
+  color: var(--it-fg);
+  font-weight: 500;
+}
+
+.it-description {
+  margin: 0;
+  color: var(--it-muted);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.it-error {
+  margin: 0;
+  color: var(--it-danger);
+  font-weight: 500;
+}
+
+.it-preview {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.it-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.it-progress-bar {
+  width: 0;
+  height: 100%;
+  background: var(--it-accent);
+  transition: width 300ms ease;
+}
+
+/* compression has no granular progress signal: show a sliding indeterminate bar */
+.it-progress[data-indeterminate] .it-progress-bar {
+  width: 40%;
+  animation: it-indeterminate 1.2s ease-in-out infinite;
+}
+
+@keyframes it-indeterminate {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(350%);
+  }
+}
+
+.it-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+  color: #fff;
+}
+
+.it-stats {
+  font-size: 12px;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.it-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.it-reset:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.it-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

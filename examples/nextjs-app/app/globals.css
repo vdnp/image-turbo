@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #18181b;
+  background: #fafafa;
+}
+
+main.demo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+main.demo h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+main.demo .lede {
+  margin: 0;
+  color: #71717a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+code {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f4f4f5;
+  font-size: 13px;
+}
+
+.demo-nav {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: #71717a;
+}
+
+.demo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-list a {
+  display: block;
+  padding: 16px;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  background: #fff;
+  text-decoration: none;
+  transition: border-color 150ms ease;
+}
+
+.demo-list a:hover {
+  border-color: #a1a1aa;
+}
+
+.demo-list strong {
+  display: block;
+  font-size: 14px;
+}
+
+.demo-list span {
+  color: #71717a;
+  font-size: 13px;
+}
+
+.result-line {
+  margin: 0;
+  color: #52525b;
+  font-size: 13px;
+}
+
+/* ---- headless demo: a deliberately different, avatar-style UI ---- */
+
+.avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.avatar-row:focus-visible,
+.avatar-row[data-drag-active] {
+  border-color: #71717a;
+}
+
+.avatar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f4f4f5;
+  color: #a1a1aa;
+  font-size: 24px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.meta p {
+  margin: 0;
+}
+
+.muted {
+  color: #71717a;
+  font-size: 13px;
+}
+
+.error-text {
+  color: #b91c1c;
+}
+
+.progress-track {
+  width: 220px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #e4e4e7;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #18181b;
+  transition: width 300ms ease;
+}
+
+button.ghost {
+  align-self: flex-start;
+  padding: 6px 14px;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button.ghost:hover {
+  background: #f4f4f5;
+}
